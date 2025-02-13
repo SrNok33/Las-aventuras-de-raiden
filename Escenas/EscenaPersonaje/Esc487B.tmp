@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhyhm1u1yphem"]
+
+[ext_resource type="PackedScene" uid="uid://0q6ayoa4lmb7" path="res://Escenas/EscenaPersonaje/personajePrincipal.tscn" id="1_b4k8l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j3m4l"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5441p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7kmh"]
+size = Vector2(724, 54)
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_b4k8l")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(16, 24)
+physics_material_override = SubResource("PhysicsMaterial_j3m4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(620, 297)
+scale = Vector2(720.5, 56.5)
+texture = SubResource("PlaceholderTexture2D_5441p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(622, 297)
+shape = SubResource("RectangleShape2D_k7kmh")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhyhm1u1yphem"]
+
+[ext_resource type="PackedScene" uid="uid://0q6ayoa4lmb7" path="res://Escenas/EscenaPersonaje/personajePrincipal.tscn" id="1_b4k8l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j3m4l"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_b4k8l")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(16, 24)
+physics_material_override = SubResource("PhysicsMaterial_j3m4l")
