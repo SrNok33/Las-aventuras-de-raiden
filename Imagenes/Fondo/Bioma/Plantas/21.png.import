@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1h0t7k26hlha"
-path="res://.godot/imported/5.png-2374dffa2be071ea6a3c7108b3616e47.ctex"
+uid="uid://b3tdhguawcu7j"
+path="res://.godot/imported/21.png-83e665a6de63b78737d54402522eb12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Fondo/5.png"
-dest_files=["res://.godot/imported/5.png-2374dffa2be071ea6a3c7108b3616e47.ctex"]
+source_file="res://Imagenes/Fondo/Bioma/Plantas/21.png"
+dest_files=["res://.godot/imported/21.png-83e665a6de63b78737d54402522eb12e.ctex"]
 
 [params]
 

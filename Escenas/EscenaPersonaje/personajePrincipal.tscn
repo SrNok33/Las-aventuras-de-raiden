@@ -472,6 +472,7 @@ animations = [{
 size = Vector2(33, 55)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(474, 417)
 script = ExtResource("1_5h3as")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -485,9 +486,6 @@ sprite_frames = SubResource("SpriteFrames_y221r")
 animation = &"attack"
 frame = 5
 frame_progress = 1.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(353, 121)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(337, 146)
