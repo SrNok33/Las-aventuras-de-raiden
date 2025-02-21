@@ -1,16 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdl85ry8qngt3"]
+[gd_scene load_steps=5 format=3 uid="uid://cdl85ry8qngt3"]
 
+[ext_resource type="Script" path="res://Scripts/hub.gd" id="1_1mwjf"]
 [ext_resource type="Texture2D" uid="uid://btu8768nbbeii" path="res://Imagenes/Monedas/Money.png" id="1_yv15s"]
+[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/FuenteBilletes/PixelOperator8-Bold.ttf" id="3_6vkrr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2ixg"]
 atlas = ExtResource("1_yv15s")
 region = Rect2(0, 0, 24, 24)
 
 [node name="HUB" type="CanvasLayer"]
+script = ExtResource("1_1mwjf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 13.0
-offset_top = 14.0
-offset_right = 77.0
-offset_bottom = 78.0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 84.0
+offset_bottom = 80.0
 texture = SubResource("AtlasTexture_n2ixg")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.035
+anchor_right = 0.027
+anchor_bottom = 0.035
+offset_left = 37.896
+offset_top = 8.32
+offset_right = 74.896
+offset_bottom = 59.32
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_6vkrr")
+theme_override_font_sizes/font_size = 21
+text = "x"
+
+[node name="ContadorMonedas" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.035
+anchor_right = 0.027
+anchor_bottom = 0.035
+offset_left = 64.896
+offset_top = 11.32
+offset_right = 128.896
+offset_bottom = 62.32
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_6vkrr")
+theme_override_font_sizes/font_size = 23
+text = "0
+"

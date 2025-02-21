@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwjgautl3ev3c"]
+
+[ext_resource type="Script" path="res://Scripts/fantasma.gd" id="1_8my0c"]
+[ext_resource type="Texture2D" uid="uid://q2auweaept1r" path="res://Imagenes/Personajes/Enemigos/characters.png" id="1_b08vs"]
+[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/FuenteBilletes/PixelOperator8-Bold.ttf" id="3_rvpky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avne4"]
+size = Vector2(37, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tcfp"]
+atlas = ExtResource("1_b08vs")
+region = Rect2(288, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ehu"]
+atlas = ExtResource("1_b08vs")
+region = Rect2(336, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0n0k"]
+atlas = ExtResource("1_b08vs")
+region = Rect2(384, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh08b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tcfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ehu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0n0k")
+}],
+"loop": true,
+"name": &"fantasma",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4hid"]
+radius = 8.0
+height = 22.0
+
+[node name="Fantasma" type="Node2D" groups=["enemigos"]]
+script = ExtResource("1_8my0c")
+
+[node name="AreaDeteccion" type="Area2D" parent="."]
+position = Vector2(334, 207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_avne4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemigos"]]
+position = Vector2(333, 210)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_bh08b")
+animation = &"fantasma"
+autoplay = "fantasma"
+
+[node name="RayCastDerecha" type="RayCast2D" parent="."]
+position = Vector2(334, 207)
+target_position = Vector2(12, 0)
+
+[node name="RayCastIzquierda" type="RayCast2D" parent="."]
+position = Vector2(334, 207)
+target_position = Vector2(-43, 0)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemigos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(333, 208)
+shape = SubResource("CapsuleShape2D_f4hid")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 288.0
+offset_top = 136.0
+offset_right = 388.0
+offset_bottom = 178.0
+
+[node name="NumeroDano" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4
+anchor_top = 0.726
+anchor_right = -0.4
+anchor_bottom = 0.726
+offset_left = 11.0
+offset_top = -10.492
+offset_right = 55.0
+offset_bottom = 12.508
+theme_override_fonts/font = ExtResource("3_rvpky")
+theme_override_font_sizes/font_size = 32
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

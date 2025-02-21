@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var vidas = 100
+@export var attack_damage: int = 10
 
 var is_attacking = false
 var is_shielding = false
 var attack_queue = 0  # Cola de ataques en espera
 
 func _physics_process(delta: float) -> void:
-	# Aplicar gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		if velocity.y < 0 and not is_attacking and not is_shielding:
@@ -63,6 +64,9 @@ func _start_attack():
 		attack_queue -= 1  # Reducimos la cola de ataques
 		velocity.x = 0  # Detenemos el movimiento mientras ataca
 		$AnimatedSprite2D.play("attack")
+		
+		# Activar detección de colisiones en el área de ataque
+		$AttackArea.monitoring = true  
 
 		# Evitar múltiples conexiones de animation_finished
 		$AnimatedSprite2D.animation_finished.disconnect(_on_attack_finished)
@@ -70,6 +74,7 @@ func _start_attack():
 
 # 🔥 **Finaliza el ataque y revisa si hay más ataques en la cola**
 func _on_attack_finished():
+	$AttackArea.monitoring = false  # Desactivar detección de colisiones
 	if attack_queue > 0:  # Si hay ataques pendientes, sigue atacando
 		_start_attack()
 	else:
@@ -89,4 +94,27 @@ func _set_idle_or_run_animation():
 func cancel_attacks():
 	attack_queue = 0  # Elimina cualquier ataque en espera
 	is_attacking = false  # Permite que el personaje vuelva a moverse
-	_set_idle_or_run_animation()  # Restablecer animación
+	_set_idle_or_run_animation()
+
+# ✅ **Función corregida de detección de daño**
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	if is_attacking and area.is_in_group("enemigos"):  # Verifica si es un enemigo
+		var enemigo = area.get_parent()
+		if enemigo.has_method("recibir_dano"):
+					area.get_parent().recibir_dano(attack_damage)  # Aplicar daño
+
+func recibir_dano(cantidad: int):
+	vidas -= cantidad
+	print("!Jugador recibio daño! Vidas restantes:", vidas)
+	
+	if vidas <= 0:
+		morir()
+
+
+func morir():
+	print("!Jugador ha muerto!")
+	queue_free()
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if not is_attacking and area.is_in_group("enemigos"):
+		recibir_dano(10)

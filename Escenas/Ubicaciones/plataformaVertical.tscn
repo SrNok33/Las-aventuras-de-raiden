@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://big1vkwlqu43q"]
+
+[ext_resource type="Script" path="res://Escenas/Ubicaciones/plataformaMovimientoVertical.gd" id="1_bieq2"]
+[ext_resource type="Texture2D" uid="uid://duaolri6igsmn" path="res://Imagenes/Suelo/Plataformas/Plataforma.png" id="2_ju56r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oem1q"]
+size = Vector2(90, 28)
+
+[node name="PlataformaVertical" type="AnimatableBody2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_bieq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(376, 232)
+texture = ExtResource("2_ju56r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(376, 238)
+shape = SubResource("RectangleShape2D_oem1q")
