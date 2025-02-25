@@ -1,11 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwjgautl3ev3c"]
+[gd_scene load_steps=9 format=3 uid="uid://cwjgautl3ev3c"]
 
 [ext_resource type="Script" path="res://Scripts/fantasma.gd" id="1_8my0c"]
 [ext_resource type="Texture2D" uid="uid://q2auweaept1r" path="res://Imagenes/Personajes/Enemigos/characters.png" id="1_b08vs"]
 [ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/FuenteBilletes/PixelOperator8-Bold.ttf" id="3_rvpky"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_avne4"]
-size = Vector2(37, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tcfp"]
 atlas = ExtResource("1_b08vs")
@@ -37,8 +34,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4hid"]
-radius = 8.0
-height = 22.0
+radius = 13.0
+height = 26.0
 
 [node name="Fantasma" type="Node2D" groups=["enemigos"]]
 script = ExtResource("1_8my0c")
@@ -47,8 +44,7 @@ script = ExtResource("1_8my0c")
 position = Vector2(334, 207)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_avne4")
+position = Vector2(-2, -0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemigos"]]
 position = Vector2(333, 210)
@@ -63,7 +59,7 @@ target_position = Vector2(12, 0)
 
 [node name="RayCastIzquierda" type="RayCast2D" parent="."]
 position = Vector2(334, 207)
-target_position = Vector2(-43, 0)
+target_position = Vector2(-14, 0)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemigos"]]
 

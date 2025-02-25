@@ -16,7 +16,7 @@
 size = Vector2(31.5, 81.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egayc"]
-radius = 16.0
+radius = 31.0
 height = 82.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj6u5"]
@@ -309,9 +309,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_urewt")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -320,7 +320,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dpgab")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -467,9 +467,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8yv7"]
 size = Vector2(33, 77.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["hit"]]
+[node name="Personaje" type="CharacterBody2D" groups=["enemigos", "hit", "jugador"]]
 position = Vector2(-101, 93)
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_5h3as")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -484,12 +484,10 @@ position = Vector2(4, -7)
 shape = SubResource("CapsuleShape2D_egayc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(338, 112)
+position = Vector2(346, 113)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_y221r")
-animation = &"attack"
-frame = 4
-frame_progress = 1.0
+animation = &"hurt"
 
 [node name="AttackArea" type="Area2D" parent="."]
 position = Vector2(330, 148)

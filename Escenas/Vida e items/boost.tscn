@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://tefravkce5"]
+
+[ext_resource type="Texture2D" uid="uid://b5eld8a74yll6" path="res://Imagenes/Items y Vida/Card.png" id="1_jus1u"]
+[ext_resource type="Script" path="res://Scripts/boost.gd" id="1_omqu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dsqv"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj81i"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpnpj"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exl0t"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mvq2"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j54s"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjsf3"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y4vr"]
+atlas = ExtResource("1_jus1u")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vo7he"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dsqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj81i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpnpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exl0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mvq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j54s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjsf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y4vr")
+}],
+"loop": true,
+"name": &"Boost",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fffou"]
+
+[node name="Boost" type="Area2D"]
+script = ExtResource("1_omqu3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(278, 159)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vo7he")
+animation = &"Boost"
+frame_progress = 0.784591
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(276, 159)
+shape = SubResource("RectangleShape2D_fffou")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://7vqjf1l1q8bj"]
+
+[ext_resource type="Script" path="res://Scripts/controles.gd" id="1_m045i"]
+[ext_resource type="Texture2D" uid="uid://cmvyc1awacuur" path="res://Imagenes/Controles/Sprites/shaded-dark/shadedDark26.png" id="2_qbrdv"]
+[ext_resource type="Texture2D" uid="uid://nn5gd6m1r64i" path="res://Imagenes/Controles/Sprites/shaded-dark/shadedDark49.png" id="3_x47fb"]
+
+[node name="Controles" type="CanvasLayer"]
+script = ExtResource("1_m045i")
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(1014, 512)
+scale = Vector2(1.625, 1.625)
+texture_normal = ExtResource("2_qbrdv")
+action = "ui_accept"
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2(855, 511)
+scale = Vector2(1.677, 1.625)
+texture_normal = ExtResource("3_x47fb")
+action = "attack"
