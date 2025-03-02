@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://d05ugk7gdtvoq"]
 
-[ext_resource type="Script" path="res://Scripts/joystick.gd" id="1_3w70u"]
-[ext_resource type="Texture2D" uid="uid://q2xsovb0yw2g" path="res://Imagenes/Controles/Sprites/flat-dark/flatDark00.png" id="2_3ipfo"]
-[ext_resource type="Texture2D" uid="uid://bb08glt64krm3" path="res://Imagenes/Controles/Sprites/transparent-light/transparentLight05.png" id="3_1mger"]
+[ext_resource type="Script" path="res://Scripts/Controles/joystick.gd" id="1_3w70u"]
+[ext_resource type="Texture2D" uid="uid://c8ejwabh5lphs" path="res://Imagenes/Controles/joystickNegro.png" id="2_1xy3n"]
+[ext_resource type="Texture2D" uid="uid://ypq2146pwtiy" path="res://Imagenes/Controles/joystickBlanco.png" id="3_omver"]
 
-[node name="Virtual Joystick" type="Control"]
+[node name="VirtualJoystick" type="Control"]
 texture_filter = 2
 layout_mode = 3
 anchors_preset = 2
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 mouse_force_pass_scroll_events = false
-texture = ExtResource("2_3ipfo")
+texture = ExtResource("2_1xy3n")
 stretch_mode = 5
 
 [node name="Tip" type="TextureRect" parent="Base"]
@@ -46,5 +46,5 @@ offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(25, 25)
-texture = ExtResource("3_1mger")
+texture = ExtResource("3_omver")
 stretch_mode = 5

@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Las Aventuras de Riven"
-run/main_scene="res://Escenas/Pantallas/menu.tscn"
+run/main_scene="res://Escenas/Pantallas/Pantalla Inicio/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://Godot/IconoApp.png"
+config/icon="res://IconoApp.png"
+config/image="res://Godot/IconoApp.png"
 
 [autoload]
 
-Global="*res://Scripts/global.gd"
+Global="*res://Scripts/Pantallas/global.gd"
 
 [display]
 

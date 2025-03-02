@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwjgautl3ev3c"]
 
-[ext_resource type="Script" path="res://Scripts/fantasma.gd" id="1_8my0c"]
+[ext_resource type="Script" path="res://Scripts/Enemigos/fantasma.gd" id="1_8my0c"]
 [ext_resource type="Texture2D" uid="uid://q2auweaept1r" path="res://Imagenes/Personajes/Enemigos/characters.png" id="1_b08vs"]
-[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/FuenteBilletes/PixelOperator8-Bold.ttf" id="3_rvpky"]
+[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/PixelOperator8-Bold.ttf" id="3_rvpky"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tcfp"]
 atlas = ExtResource("1_b08vs")

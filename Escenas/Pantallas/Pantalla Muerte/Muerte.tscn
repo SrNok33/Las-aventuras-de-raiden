@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2yawb6t8sbty"]
+
+[ext_resource type="Script" path="res://Scripts/Pantallas/muerte.gd" id="1_e0se1"]
+[ext_resource type="Texture2D" uid="uid://dgj6j8c5jkpal" path="res://Imagenes/Fondo/Sombras/6.png" id="2_i2ibv"]
+[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/PixelOperator8-Bold.ttf" id="3_8vrep"]
+[ext_resource type="AudioStream" uid="uid://10kc0r6i7bab" path="res://Audios/winning-loop-228639_1.ogg" id="4_pbe4w"]
+
+[node name="Muerte" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0se1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 649.0
+texture = ExtResource("2_i2ibv")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.856494, 3.65794e-06, 8.66354e-07, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 51.0
+offset_right = 1155.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("3_8vrep")
+theme_override_font_sizes/font_size = 50
+text = "!Has perdido¡"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -45.0
+offset_right = 212.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="BtoVolverJugar" type="Button" parent="VBoxContainer"]
+modulate = Color(0.792157, 0.529412, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8vrep")
+theme_override_font_sizes/font_size = 32
+text = "JUGAR"
+
+[node name="BtoSalir" type="Button" parent="VBoxContainer"]
+modulate = Color(0.854902, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8vrep")
+theme_override_font_sizes/font_size = 32
+text = "SALIR"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pbe4w")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/BtoVolverJugar" to="." method="_on_bto_volver_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtoSalir" to="." method="_on_bto_salir_pressed"]

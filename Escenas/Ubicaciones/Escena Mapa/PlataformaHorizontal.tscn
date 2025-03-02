@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmm3f258721mv"]
+
+[ext_resource type="Script" path="res://Scripts/Movimiento/plataformaMovimientoHorizontal.gd" id="1_13ikq"]
+[ext_resource type="Texture2D" uid="uid://duaolri6igsmn" path="res://Imagenes/Suelo/Plataformas/Plataforma.png" id="2_3rpk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t0qo"]
+size = Vector2(54, 17)
+
+[node name="PlataformaHorizontal" type="AnimatableBody2D"]
+script = ExtResource("1_13ikq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(391, 226)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_3rpk7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(391, 230.5)
+shape = SubResource("RectangleShape2D_1t0qo")
+
+[node name="RayCastDerecha" type="RayCast2D" parent="."]
+position = Vector2(391, 230)
+target_position = Vector2(31, 0)
+
+[node name="RayCastIzquierda" type="RayCast2D" parent="."]
+position = Vector2(391, 230)
+target_position = Vector2(-31, 0)

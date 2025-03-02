@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcsqk7fuujt5q"]
+
+[ext_resource type="Texture2D" uid="uid://dubfcbjtdjylh" path="res://Imagenes/Controles/teclaA.png" id="1_frse0"]
+
+[node name="ControlesPc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TeclaIzq" type="Button" parent="."]
+layout_mode = 0
+offset_right = 156.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("1_frse0")
+flat = true
+
+[node name="TeclaDer" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TeclaSalto" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

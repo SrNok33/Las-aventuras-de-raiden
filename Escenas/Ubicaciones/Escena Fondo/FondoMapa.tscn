@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07dgpkrsi881"]
+
+[ext_resource type="Texture2D" uid="uid://dgj6j8c5jkpal" path="res://Imagenes/Fondo/Sombras/6.png" id="1_niho7"]
+
+[node name="Fondo" type="ParallaxBackground"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="6" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(292.944, 166.423)
+texture = ExtResource("1_niho7")
