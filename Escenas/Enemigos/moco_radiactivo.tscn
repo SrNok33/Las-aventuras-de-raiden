@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnmpfh5lpxhvt"]
+
+[ext_resource type="Texture2D" uid="uid://q2auweaept1r" path="res://Imagenes/Personajes/Enemigos/characters.png" id="1_5imm5"]
+[ext_resource type="Script" path="res://Scripts/Enemigos/moco_radiactivo.gd" id="1_rj1d6"]
+[ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/PixelOperator8-Bold.ttf" id="2_c5lch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwtvs"]
+radius = 16.0
+height = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmsqp"]
+atlas = ExtResource("1_5imm5")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu71i"]
+atlas = ExtResource("1_5imm5")
+region = Rect2(48, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmlcv"]
+atlas = ExtResource("1_5imm5")
+region = Rect2(96, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ioykx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmsqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu71i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmlcv")
+}],
+"loop": true,
+"name": &"MocoRadiactivo",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_asqsi"]
+radius = 16.0
+
+[node name="MocoRadiactivo" type="Node2D" groups=["enemigos"]]
+script = ExtResource("1_rj1d6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_vwtvs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemigos"]]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ioykx")
+animation = &"MocoRadiactivo"
+autoplay = "MocoRadiactivo"
+frame_progress = 0.729191
+
+[node name="RayCastDerecha" type="RayCast2D" parent="."]
+target_position = Vector2(19, 0)
+
+[node name="RayCastIzquierda" type="RayCast2D" parent="."]
+target_position = Vector2(-19, 0)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemigos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_asqsi")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -67.0
+offset_right = 52.0
+offset_bottom = -25.0
+
+[node name="NumeroDano" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4
+anchor_top = 0.726
+anchor_right = -0.4
+anchor_bottom = 0.726
+offset_left = 11.0
+offset_top = -10.492
+offset_right = 55.0
+offset_bottom = 12.508
+theme_override_colors/font_color = Color(0.719454, 2.55093e-06, 5.77569e-07, 1)
+theme_override_fonts/font = ExtResource("2_c5lch")
+theme_override_font_sizes/font_size = 32
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

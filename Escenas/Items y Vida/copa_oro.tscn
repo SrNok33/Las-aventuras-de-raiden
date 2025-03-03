@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://do8lk6d7f408y"]
+
+[ext_resource type="Texture2D" uid="uid://ytitm37v1d20" path="res://Imagenes/Items y Vida/CopaOro.png" id="2_vn3hq"]
+
+[node name="CopaOro" type="Node2D"]
+
+[node name="CopaOro" type="Sprite2D" parent="."]
+position = Vector2(370, 212)
+texture = ExtResource("2_vn3hq")
