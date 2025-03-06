@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://uq6yoccr18rx"]
+[gd_scene load_steps=22 format=3 uid="uid://uq6yoccr18rx"]
 
 [ext_resource type="Script" path="res://Scripts/Pantallas/mapa.gd" id="1_aaahp"]
 [ext_resource type="Script" path="res://Scripts/Interfaz/game_manager.gd" id="1_b0510"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://Scripts/Pantallas/CambiarEscena.gd" id="11_esxcc"]
 [ext_resource type="FontFile" uid="uid://dtgbyxcfowgtb" path="res://Fuentes/PixelOperator8-Bold.ttf" id="12_jvwgv"]
 [ext_resource type="Texture2D" uid="uid://b4q1kv6qrdp36" path="res://Imagenes/Fondo/Flecha/Flecha.png" id="13_w3g4m"]
-[ext_resource type="PackedScene" uid="uid://d05ugk7gdtvoq" path="res://Escenas/Controles/joystick.tscn" id="15_bft4t"]
 [ext_resource type="AudioStream" uid="uid://bcie0nbudokif" path="res://Audios/game-music-loop-3-144252_1.ogg" id="17_qaxyp"]
 [ext_resource type="PackedScene" uid="uid://bnmpfh5lpxhvt" path="res://Escenas/Enemigos/moco_radiactivo.tscn" id="17_vkk0k"]
 [ext_resource type="PackedScene" uid="uid://do8lk6d7f408y" path="res://Escenas/Items y Vida/copa_oro.tscn" id="18_1evs3"]
@@ -424,12 +423,6 @@ position = Vector2(3, 3)
 script = ExtResource("1_aaahp")
 
 [node name="Controles" parent="." instance=ExtResource("2_cchyf")]
-
-[node name="Virtual Joystick" parent="Controles" instance=ExtResource("15_bft4t")]
-offset_left = 28.0
-offset_top = -189.0
-offset_right = 178.0
-offset_bottom = -39.0
 
 [node name="HUB" parent="." instance=ExtResource("6_pg6cx")]
 

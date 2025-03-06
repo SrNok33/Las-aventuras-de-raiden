@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7vqjf1l1q8bj"]
+[gd_scene load_steps=5 format=3 uid="uid://7vqjf1l1q8bj"]
 
 [ext_resource type="Script" path="res://Scripts/Controles/controles.gd" id="1_m045i"]
 [ext_resource type="Texture2D" uid="uid://duo88v7g3rt0d" path="res://Imagenes/Controles/botonSalto.png" id="2_j3n8n"]
 [ext_resource type="Texture2D" uid="uid://c2wmn0uio4n0" path="res://Imagenes/Controles/botonAtaque.png" id="3_ijkx4"]
+[ext_resource type="PackedScene" uid="uid://d05ugk7gdtvoq" path="res://Escenas/Controles/joystick.tscn" id="4_ot2ds"]
 
 [node name="Controles" type="CanvasLayer"]
 script = ExtResource("1_m045i")
@@ -18,3 +19,9 @@ position = Vector2(855, 511)
 scale = Vector2(1.677, 1.625)
 texture_normal = ExtResource("3_ijkx4")
 action = "attack"
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("4_ot2ds")]
+offset_left = 83.0
+offset_top = -294.0
+offset_right = 233.0
+offset_bottom = -144.0

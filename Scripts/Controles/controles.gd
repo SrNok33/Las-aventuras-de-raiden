@@ -6,7 +6,7 @@ extends CanvasLayer
 # Referencias a los nodos en este CanvasLayer
 @onready var jump_button = $Jump
 @onready var attack_button = $Attack
-@onready var joystick= $"Virtual Joystick"
+@onready var joystick= $"VirtualJoystick"
 
 func _ready():
 	if OS.get_name() == "Windows":
